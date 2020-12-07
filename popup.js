@@ -14,9 +14,10 @@ changeColor.onclick = function(element) {
 };
 
 function sendCurrentUrlToServer(tab) {
-    var server_ip = "192.168.56.4";
-    var server_port = "9090";
+    var url = "http://127.0.0.1:5000/api/v1/ip/url";
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://" + server_ip + ":" + server_port + "?url=" + tab.url, true);
-    xhr.send();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    var json = JSON.stringify({"url": tab.url});
+    xhr.send(json);
 }

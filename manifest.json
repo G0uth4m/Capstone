@@ -2,7 +2,7 @@
     "name": "Malicious extension",
     "version": "1.0",
     "description": "Small prototype",
-    "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+    "permissions": ["activeTab", "declarativeContent", "storage", "tabs", "http://*/"],
     "background": {
         "scripts": ["background.js"],
         "persistent": false
